@@ -1,0 +1,56 @@
+[System]
+Name='Sistema_valorizador_v0.2'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='VALOR-PSU'
+Range=[0 100]
+NumMFs=3
+MF1='NORMAL':'trimf',[0 50 100]
+MF2='BAJO':'trimf',[-50 0 50]
+MF3='ALTO':'trimf',[50 100 150]
+
+[Input2]
+Name='ANTIGUEDAD'
+Range=[0 50]
+NumMFs=3
+MF1='NUEVA':'trimf',[-20 0 3]
+MF2='NORMAL':'trimf',[-5 3 6]
+MF3='ALTA':'trapmf',[1.5 10.1643598615917 93.5 722]
+
+[Input3]
+Name='NUCLEOS'
+Range=[1 64]
+NumMFs=3
+MF1='BAJO':'trapmf',[-21.67 -1.52 1.005 1.701]
+MF2='NORMAL':'trimf',[-1.976 2.488 7.052]
+MF3='ALTO':'trapmf',[-0.609 6.468 63.76 127.3]
+
+[Output1]
+Name='VALOR'
+Range=[0 100]
+NumMFs=3
+MF1='BAJO':'trimf',[-40 0 40]
+MF2='MEDIO':'trimf',[10 50 90]
+MF3='ALTO':'trimf',[60 100 140]
+
+[Rules]
+2 0 2, 1 (1) : 1
+3 0 3, 3 (1) : 1
+1 0 2, 2 (1) : 1
+2 0 1, 1 (1) : 1
+1 0 1, 1 (1) : 1
+3 0 2, 2 (1) : 1
+0 1 0, 3 (1) : 1
+0 2 0, 2 (1) : 1
+0 3 0, 1 (1) : 1
+2 0 3, 2 (1) : 1

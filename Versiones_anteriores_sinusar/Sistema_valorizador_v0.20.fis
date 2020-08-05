@@ -1,0 +1,57 @@
+[System]
+Name='Sistema_valorizador_v0.20'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=10
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='VALOR-PSU'
+Range=[0 100]
+NumMFs=3
+MF1='NORMAL':'gbellmf',[25 0.707 54.8065650644783]
+MF2='BAJO':'gbellmf',[10.1 1.15 -4.33763188745604]
+MF3='ALTO':'trimf',[40.3836424663652 100.472332942556 150.172332942556]
+
+[Input2]
+Name='ANTIGUEDAD'
+Range=[0 25]
+NumMFs=3
+MF1='NUEVA':'gbellmf',[1.599 4.43 -1.145]
+MF2='NORMAL':'gbellmf',[3.255 0.81 1.742]
+MF3='ALTA':'trapmf',[-7.5 25.31 27.4 41.15]
+
+[Input3]
+Name='NUCLEOS'
+Range=[1 24]
+NumMFs=3
+MF1='BAJO':'gbellmf',[1.603 1.793 0.09098]
+MF2='NORMAL':'gbellmf',[1.8 0.3349 1.654]
+MF3='ALTO':'trapmf',[-18.35 24.36 24.66 31.78]
+
+[Output1]
+Name='VALOR'
+Range=[0 100]
+NumMFs=4
+MF1='BAJO':'trimf',[-44.1 -4.1 99.8677248677249]
+MF2='MEDIO':'gbellmf',[17.063492063492 0.895 50]
+MF3='ALTO':'gaussmf',[10.765715539418 73.7]
+MF4='EXCELENTE':'gbellmf',[25 1.08 103.753439153439]
+
+[Rules]
+2 0 2, 1 (1) : 1
+3 0 3, 4 (1) : 1
+1 0 2, 2 (1) : 1
+2 0 1, 1 (1) : 1
+1 0 1, 2 (1) : 1
+3 0 2, 3 (1) : 1
+0 1 0, 4 (1) : 1
+0 2 0, 3 (0.5) : 1
+0 3 0, 2 (1) : 1
+2 0 3, 2 (1) : 1

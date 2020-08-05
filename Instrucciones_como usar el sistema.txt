@@ -1,0 +1,31 @@
+%                                       Sistema varolizador de PC´s                                                        %
+
+%   Sistema de inferencia difusa tipo Mamdani - Larsen %
+
+%   TP - FINAL - Inteligencia Artificial 1 - Lic. en Informática %
+
+%   Universidad Atlántida Argentina %
+
+%   Fecha de inicio = Julio 2020 || Fecha de entrega =  3 de Agosto de 2020 %
+
+%   Alumno = Giacalone Juan Pablo || DNI = 40.666.502 %
+
+%   INPUTS %
+
+   % [ %VALOR_PSU %ANTIGUEDAD %NUCLEOS; ] %
+   
+% Funcionamiento del sistema en la funcion =  " pushbutton2_Callback "
+
+PASOS PARA SU FUNCIONAMIENTO = 
+
+
+	1 Abrir el archivo = " sist_valorizador_GiacaloneJP.m " con MatLab ( creado en MatLab R2018a ).
+
+	2 Configurar .fis a utilizar ( cada uno posee una configuracion distinta) v. 0.24 / 0.25 / 0.25 en la funcion " pushbutton2_Callback "
+
+		para ello modificar la linea 113 y colocar el numero de version deseado.
+
+	3 Correr el archivo .m
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
