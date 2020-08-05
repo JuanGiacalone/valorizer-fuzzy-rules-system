@@ -3,7 +3,7 @@ Date 3/08/2020
 
     -> Basic Mamdani inference system for valuating PC´s.
     
-    -> Created for learning porpouses.
+    -> Created for learning purposes.
     
     -> Coded and commented in Spanish for institutional policies.
     
